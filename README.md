@@ -1,7 +1,7 @@
 # Go HTTP Client
 
-[![Build Status](https://github.com/yaoguais/gohttpclient/workflows/Run%20Tests/badge.svg?branch=master)](https://github.com/yaoguais/gohttpclient/actions?query=branch%3Amaster)
-[![codecov](https://codecov.io/gh/yaoguais/gohttpclient/branch/master/graph/badge.svg)](https://codecov.io/gh/yaoguais/gohttpclient)
+![Build Status](https://github.com/yaoguais/gohttpclient/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/yaoguais/gohttpclient/branch/main/graph/badge.svg?token=11OX1Yevrr)](https://codecov.io/gh/yaoguais/gohttpclient)
 [![Go Report Card](https://goreportcard.com/badge/github.com/yaoguais/gohttpclient)](https://goreportcard.com/report/github.com/yaoguais/gohttpclient)
 [![GoDoc](https://pkg.go.dev/badge/github.com/yaoguais/gohttpclient?status.svg)](https://pkg.go.dev/github.com/yaoguais/gohttpclient?tab=doc)
 
