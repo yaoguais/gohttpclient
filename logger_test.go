@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
@@ -70,4 +71,18 @@ func TestCopyHTTPHeader(t *testing.T) {
 	require.Nil(t, copyHTTPHeader(nil))
 	h := copyHTTPHeader(http.Header{"Foo": []string{"bar"}})
 	require.Equal(t, HTTPHeader{"Foo": "bar"}, h)
+}
+
+func TestDefaultLoggerFunc(t *testing.T) {
+	option := NewLoggerOption()
+	resp := &http.Response{
+		StatusCode: 200,
+		Header:     http.Header{"Content-Type": []string{"application/json"}},
+		Body:       io.NopCloser(bytes.NewBufferString("hello world")),
+	}
+	url := "https://example.com"
+	req, _ := http.NewRequest(http.MethodPost, url, nil)
+	entry, err := getLoggerEntry(req, resp, option, time.Now())
+	require.Nil(t, err)
+	defaultLoggerFunc(req, entry, option)
 }
